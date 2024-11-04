@@ -36,6 +36,7 @@ function enforceMaxItems() {
 // Function to remove old entries
 function reaper() {
   const now = Date.now();
+
   for (const path of Object.keys(store)) {
     if (now - timestamps[path] > MAX_AGE_MS) {
       delete store[path];
@@ -72,13 +73,19 @@ router.post('/:path', (ctx) => {
   ctx.body = {};
 });
 
+// GET endpoint to serve as a health check
+router.get('/', (ctx) => {
+  ctx.status = 200;
+  ctx.body = 'Path not specified!';
+});
+
 // GET endpoint to retrieve a value from a dynamic path
 router.get('/:path', (ctx) => {
   const { path } = ctx.params;
 
   if (store[path] === undefined) {
     ctx.status = 404;
-    ctx.body = { error: 'Value not found' };
+    ctx.body = 'Value not found!';
 
     return;
   }
