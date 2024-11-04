@@ -13,6 +13,7 @@ const router = new Router();
 
 const store = {};
 const contentTypes = {};
+const timestamps = {};
 const pathOrder = [];
 
 // Middleware to enforce body size limit of 1mb
