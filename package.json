@@ -1,0 +1,20 @@
+{
+  "name": "echo-bin",
+  "version": "1.0.0",
+  "description": "An echo bin for storing and retrieving test data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "echo",
+    "bin"
+  ],
+  "author": "Loadster <help@loadster.app>",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^13.1.0",
+    "koa": "^2.15.3",
+    "koa-bodyparser": "^4.4.1"
+  }
+}
