@@ -1,4 +1,4 @@
-const PORT = 3000;
+const PORT = Number(process.env['PORT'] || 3000);
 const MAX_ITEMS = 500; // Maximum number of items allowed
 const MAX_SIZE = '1mb'; // Each item's maximum size
 const MAX_AGE_MS = 4 * 60 * 60 * 1000; // Maximum age of 4 hours in milliseconds
